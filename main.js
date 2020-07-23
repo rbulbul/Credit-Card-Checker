@@ -42,18 +42,15 @@ const batch = [
 const validateCred = (array) => {
   let total = array[array.length - 1];
   newArray = array.slice(0, array.length - 1);
-  console.log(newArray);
   for (let i = newArray.length - 1; i >= 0; i--) {
     if (i % 2 === 0) {
       newArray[i] *= 2;
-      console.log(newArray);
     }
     if (i % 2 === 0 && newArray[i] > 9) {
       newArray[i] -= 9;
     }
     total += newArray[i];
   }
-  console.log(total);
   if (total % 10 === 0) {
     return 'valid';
   } else {
